@@ -11,9 +11,6 @@ import { Link } from "react-router-dom";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ShareIcon from "@material-ui/icons/Share";
 
-
-
-
 function UserProfile() {
   const { userid } = useParams();
 
@@ -25,9 +22,7 @@ function UserProfile() {
     user ? !user.following.includes(userid) : true
   );
 
-
-
- // console.log(userProfile)
+  // console.log(userProfile)
   //  myposts.map(a=>{
   //      console.log(a)
   //  })
@@ -226,11 +221,11 @@ function UserProfile() {
               </div>
               {showfollowbutton ? (
                 <button className="button" onClick={() => followUser()}>
-                Recommend
+                  Recommend
                 </button>
               ) : (
                 <button className="button" onClick={() => unfollowUser()}>
-               Unrecommend
+                  Unrecommend
                 </button>
               )}
             </div>
@@ -269,7 +264,6 @@ function UserProfile() {
                   <h5 className="likecount">{item.like.length} reccomended</h5>
                   <div className="home_card_content">
                     <div className="home_icon">
-                 
                       {item.like.includes(user._id) ? (
                         <div
                           className="home_unlike"

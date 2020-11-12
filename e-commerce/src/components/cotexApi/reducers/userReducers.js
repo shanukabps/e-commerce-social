@@ -1,74 +1,86 @@
-export const initialState = {
-  //inirial data layer
-  basket: [],
-  user: null,
-};
+
+
+export const initialState = {//inirial data layer
+    basket: [],
+    user: null
+}
 
 //Selector
 export const getBasketTotal = (basket) =>
-  basket?.reduce((amount, item) => item.price + amount, 0);
+    basket?.reduce((amount, item) =>parseFloat(item.price) + amount, 0);
+
 
 const reducer = (state, action) => {
-  console.log(action);
-  switch (action.type) {
-    case "SET_USER":
-      return {
-        ...state,
-        user: action.user,
-      };
+   // console.log(action)
+    switch (action.type) {
 
-    case "CLEAR":
-      return {
-        user: null,
-      };
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user
+            }
 
-    case "UPDATE":
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          followers: action.user.followers,
-          following: action.user.following,
-        },
-      };
+        case "CLEAR":
+            return {
 
-    case "UPDATEPIC":
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          pic: action.user.pic,
-        },
-      };
+                user: null
+            }
 
-    case "ADD_TO_BASKET":
-      return {
-        ...state,
-        basket: [...state.basket, action.item],
-      };
+               case "UPDATE":
+            return {
 
-    case "REMOVE_FROM_BASKET":
-      const index = state.basket.findIndex(
-        (basketItem) => basketItem.id === action.id
-      );
-      let newBasket = [...state.basket];
+                ...state,
+               user:{
+                   ...state.user,
+                   followers:action.user.followers,
+                   following:action.user.following
+                }
+             
+            }
 
-      if (index >= 0) {
-        newBasket.splice(index, 1);
-      } else {
-        console.warn(
-          `Cant remove product (id: ${action.id}) as its not inbasket!`
-        );
-      }
+               case "UPDATEPIC":
+            return {
 
-      return {
-        ...state,
-        basket: newBasket,
-      };
+                ...state,
+               user:{
+                   ...state.user,
+                  pic:action.user.pic
+                }
+             
+            }
 
-    default:
-      return state;
-  }
-};
+case 'ADD_TO_BASKET':
+            return {
+                ...state,
+                basket: [...state.basket, action.item],
+            }
 
-export default reducer;
+        case "REMOVE_FROM_BASKET":
+
+            const index = state.basket.findIndex(
+                basketItem => basketItem.id === action.id
+            );
+            let newBasket = [...state.basket];
+
+            if (index >= 0) {
+                newBasket.splice(index, 1);
+            } else {
+                console.warn(
+                    `Cant remove product (id: ${action.id}) as its not inbasket!`
+                )
+            }
+
+            return {
+                ...state,
+                basket: newBasket
+            }
+
+
+
+
+        default:
+            return state
+    }
+}
+
+export default reducer

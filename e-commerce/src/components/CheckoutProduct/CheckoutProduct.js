@@ -20,14 +20,7 @@ dispatch({
                 <p className="checkoutProduct_price">
                     <small>$</small><strong>{price}</strong>
                 </p>
-                <div className="checkoutProduct_rating">
-                    {Array(rating)
-                        .fill()
-                        .map((_, i) => (
-                            <p>&#11088;</p>
-                        ))}
-
-                </div>
+           
                 <button onClick={removeFormBasket}>Removed From Busket</button>
             </div>
         </div>

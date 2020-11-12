@@ -1,9 +1,10 @@
 .navbar {
   display: flex;
+  align-items: center;
   width: 100%;
   min-width: 534px;
-  height: 10vh;
-
+  height: 80px;
+  text-decoration: none;
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
@@ -66,4 +67,23 @@
 /* Hide the link that should open and close the topnav on small screens */
 .navbar .icon {
   display: none;
+}
+.navbar_log {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_log > a {
+  margin-left: 10px;
+  color: rgb(64, 219, 110);
+  text-decoration: none;
+}
+
+.navbar_log > a {
+  display: flex;
+  margin-top: 15px;
+  margin-left: 10px;
+  align-items: center;
+  color: rgb(64, 219, 110);
+  text-decoration: none;
 }

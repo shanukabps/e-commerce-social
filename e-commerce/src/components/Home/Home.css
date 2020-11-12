@@ -17,7 +17,7 @@
   width: 40vw;
   align-items: flex-start;
   margin: 26px auto;
-  box-shadow: 1px 4px 6px 6px rgb(232, 237, 238);
+  box-shadow: 1px 4px 6px 6px rgb(166, 205, 214);
   width: 300px;
   height: 417px;
   border-radius: 0;
@@ -36,6 +36,12 @@
   width: 400px;
   display: flex;
   justify-content: center;
+}
+.seachitem {
+  display: flex;
+  margin-top: -45px;
+  justify-content: center;
+  align-items: center;
 }
 
 .home_img {
