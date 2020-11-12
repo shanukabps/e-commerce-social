@@ -1,0 +1,23 @@
+.createpost {
+  margin-top: 10vh;
+  display: grid;
+  justify-content: center;
+}
+.postc {
+  height: 450px;
+}
+.postc > h3 {
+  margin-top: 20px;
+  font-size: x-large;
+  font-family: "Grandstander", cursive;
+  color: rgb(91, 97, 109);
+}
+
+.post_input {
+  margin: 50px;
+}
+
+.post_button {
+  display: flex;
+  justify-content: center;
+}

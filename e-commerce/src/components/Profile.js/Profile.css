@@ -1,0 +1,86 @@
+.profilec {
+  padding: 10px;
+  width: 500px;
+  height: 700px;
+}
+.profile__card_image {
+  width: 40vw;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.profile_card_delete {
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+}
+.comment_box {
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  overflow-y: scroll;
+  height: 90px;
+}
+.home_card_content {
+  width: 40vw;
+}
+.cprofile {
+  width: 38vw;
+}
+.profile_header {
+  display: flex;
+  flex: 1 2 4;
+  justify-content: space-around;
+  margin: 18px 0;
+  border-bottom: 1px solid mediumaquamarine;
+}
+.profile_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_pic {
+  width: 280px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.profile_details > h4 {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.profile_rating > h5 {
+  margin-top: 20px;
+  font-size: medium;
+  font-weight: 400;
+}
+.comment_input_button {
+  display: flex;
+
+  justify-content: center;
+}
+.commentbox_profile {
+  display: flex;
+}
+
+.input_profile {
+  width: 30vw;
+}
+.input_profile > input {
+  width: 30vw;
+}
+
+.profile_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+.gallery_item {
+  display: flex;
+  justify-content: space-around;
+  width: 40vw;
+}
