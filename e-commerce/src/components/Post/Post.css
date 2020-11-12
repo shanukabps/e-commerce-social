@@ -1,0 +1,35 @@
+.postlayout {
+  padding: 10px;
+  width: 40vw;
+  height: 700px;
+}
+
+.post__card_image {
+  width: 40vw;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.comment_box_post {
+  margin-top: 10px;
+  width: 38vw;
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  height: 90px;
+}
+.inputpost_post {
+  width: 34vw;
+}
+.inputpost_post > input {
+  margin: 10px;
+  width: 34vw;
+  max-width: 500px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.postcom_sendfelx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

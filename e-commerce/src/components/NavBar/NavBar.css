@@ -3,13 +3,24 @@
   width: 100%;
   min-width: 534px;
   height: 10vh;
+
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
   overflow: hidden;
   align-items: center;
 }
-
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(241, 107, 107);
+  margin-right: 10px;
+  cursor: pointer;
+}
+.basketnav {
+  color: rgb(255, 0, 34);
+}
 .navbar_logo {
   margin-left: 10px;
   font-family: "Grandstander", cursive;
@@ -36,7 +47,7 @@
 
 /* Change the color of links on hover */
 .navbar_link > a:hover {
-  color: white;
+  color: rgb(215, 244, 248);
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 4, 255), 0 0 5px darkblue;
 }
 

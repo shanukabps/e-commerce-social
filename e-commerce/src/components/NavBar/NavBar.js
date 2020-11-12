@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useStateValue } from "../cotexApi/StateProvider";
 import { useHistory } from "react-router-dom";
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
+
 function NavBar() {
   const history = useHistory();
   const [{ user }, dispatch] = useStateValue();
@@ -33,10 +37,8 @@ function NavBar() {
                 <Link to="/" className="active">Home</Link>
                 <Link to="/profile">My Shop</Link>
                 <Link to="/createpost"> Add Item</Link>
-             
-                <button className="logout" onClick={handelLogout}>
-                  Logout
-                </button>
+                <Link to="/addtobasket" >    <ShoppingCartIcon/></Link>
+         
               </>
             :
         
@@ -46,6 +48,14 @@ function NavBar() {
               </>
             }
           </div>
+      
+          
+
+          
+            <div className="logout">
+                <PowerSettingsNewIcon  onClick={handelLogout} />
+
+           </div>
         </div>
       </nav>
     </div>

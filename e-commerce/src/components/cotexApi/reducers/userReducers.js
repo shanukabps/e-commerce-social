@@ -1,59 +1,74 @@
+export const initialState = {
+  //inirial data layer
+  basket: [],
+  user: null,
+};
 
-
-export const initialState = {//inirial data layer
-
-    user: null
-}
-
-
+//Selector
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
-    console.log(action)
-    switch (action.type) {
+  console.log(action);
+  switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
 
-        case "SET_USER":
-            return {
-                ...state,
-                user: action.user
-            }
+    case "CLEAR":
+      return {
+        user: null,
+      };
 
-        case "CLEAR":
-            return {
+    case "UPDATE":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          followers: action.user.followers,
+          following: action.user.following,
+        },
+      };
 
-                user: null
-            }
+    case "UPDATEPIC":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          pic: action.user.pic,
+        },
+      };
 
-               case "UPDATE":
-            return {
+    case "ADD_TO_BASKET":
+      return {
+        ...state,
+        basket: [...state.basket, action.item],
+      };
 
-                ...state,
-               user:{
-                   ...state.user,
-                   followers:action.user.followers,
-                   following:action.user.following
-                }
-             
-            }
+    case "REMOVE_FROM_BASKET":
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
+      let newBasket = [...state.basket];
 
-               case "UPDATEPIC":
-            return {
+      if (index >= 0) {
+        newBasket.splice(index, 1);
+      } else {
+        console.warn(
+          `Cant remove product (id: ${action.id}) as its not inbasket!`
+        );
+      }
 
-                ...state,
-               user:{
-                   ...state.user,
-                  pic:action.user.pic
-                }
-             
-            }
+      return {
+        ...state,
+        basket: newBasket,
+      };
 
+    default:
+      return state;
+  }
+};
 
-
-
-
-
-        default:
-            return state
-    }
-}
-
-export default reducer
+export default reducer;

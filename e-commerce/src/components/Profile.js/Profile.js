@@ -18,7 +18,7 @@ function Profile() {
   //console.log('data',data)
 
 
- // console.log('pro', user)
+  console.log('pro', data)
 
  
 
@@ -276,7 +276,7 @@ if(url){
                     return (
                       <div className="comment_name">
                         <h5 key={comment._id}>
-                          {comment.postedBy.name}{" "}
+                          {comment.postedBy.name}
                           <span key={comment._id}> {comment.text}</span>
                         </h5>
                         <div className="comentdelete">

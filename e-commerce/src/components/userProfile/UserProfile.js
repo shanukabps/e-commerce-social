@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Profile.js/Profile.css";
+import "./UserProfile.css";
 import { useParams } from "react-router-dom";
 import { useStateValue } from "./../cotexApi/StateProvider";
 import { toast } from "react-toastify";
@@ -27,7 +27,7 @@ function UserProfile() {
 
 
 
-  console.log(userProfile)
+ // console.log(userProfile)
   //  myposts.map(a=>{
   //      console.log(a)
   //  })
@@ -239,7 +239,7 @@ function UserProfile() {
           <div className="home">
             {userposts.map((item) => {
               return (
-                <div className="card home_card profilec">
+                <div className="card home_card userprofilec">
                   <div className="profile_card_delete">
                     <h3>
                       <Link
@@ -263,7 +263,7 @@ function UserProfile() {
                     <img
                       src={item.photo}
                       alt=""
-                      className="profile__card_image"
+                      className="userprofile__card_image"
                     />
                   </div>
                   <h5 className="likecount">{item.like.length} reccomended</h5>
@@ -308,7 +308,7 @@ function UserProfile() {
                       </div>
                     </form>
 
-                    <div className="comment_box">
+                    <div className="comment_box_user">
                       {item.comments.map((comment) => {
                         return (
                           <div className="comment_name">

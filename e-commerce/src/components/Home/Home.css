@@ -8,7 +8,9 @@
 .home_card_delete {
   width: 300px;
 }
-
+.buttonb {
+  padding: 6px 30px;
+}
 .home_card {
   display: flex;
   justify-content: space-around;
@@ -71,7 +73,9 @@
 
 .home_icon {
   display: flex;
-  max-width: 100px;
+  justify-content: space-around;
+  width: 250px;
+
   justify-content: space-between;
 }
 .home_like {

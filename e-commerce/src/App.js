@@ -17,6 +17,7 @@ import SubUserPost from "./components/subUserPost/subUserPost";
 import UserProfile from "./components/userProfile/UserProfile";
 import { useHistory } from "react-router-dom";
 import Post from './components/Post/Post';
+import UserBasket from './components/userBasket/userBasket';
 
 
 
@@ -142,6 +143,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/profile/:userid" component={UserProfile} />
           <Route path="/post/:postid" component={Post} />
+            <Route path="/addtobasket" component={UserBasket} />
         <Route path="/mysubposts" component={SubUserPost} />
             <Redirect from="/" exact to="/signin" />
             <Redirect to="/signin" />

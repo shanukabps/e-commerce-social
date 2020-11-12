@@ -21,7 +21,7 @@ function Home() {
     axios
       .get("/allpost")
       .then((req) => {
-        console.log(req.data);
+      //  console.log(req.data);
         setdata(req.data.posts);
       })
       .catch((e) => {
@@ -141,7 +141,7 @@ function Home() {
             <h6>{item.title}</h6>
             <div className="home_body">{item.body}</div>
             <p>$ {item.price}</p>
-            <h6> {item.unit}</h6>
+            <h6>store {item.unit}</h6>
 
                     <Link
                   className="name_link"
@@ -169,7 +169,9 @@ function Home() {
                     <ThumbUpIcon />
                   </div>
                 )}
+                   <button className="buttonb" >Add to Cart</button>
               </div>
+             
             </div>
           </div>
         );

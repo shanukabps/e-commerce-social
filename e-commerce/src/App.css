@@ -49,10 +49,13 @@ input:hover {
 
 .button {
   margin-top: 30px;
+
+  padding: 9px 60px;
+}
+button {
   background-color: rgb(19, 138, 168);
   border: none;
 
-  padding: 9px 60px;
   color: rgb(228, 222, 222);
   border-radius: 5px;
   cursor: pointer;

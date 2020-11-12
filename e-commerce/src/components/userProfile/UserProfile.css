@@ -1,0 +1,23 @@
+.userprofilec {
+  padding: 10px;
+  width: 500px;
+  height: 700px;
+}
+
+.home_card > h3 {
+  margin: 10px 0;
+  color: rgb(145, 148, 148);
+  font-family: "Inconsolata", monospace;
+}
+
+.userprofile__card_image {
+  width: 500px;
+}
+
+.comment_box_user {
+  margin-top: 10px;
+  width: 450px;
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  height: 90px;
+}

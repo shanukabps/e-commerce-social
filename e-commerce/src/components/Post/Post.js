@@ -10,6 +10,11 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ShareIcon from "@material-ui/icons/Share";
 import { useStateValue } from "./../cotexApi/StateProvider";
 import { DeleteForever } from "@material-ui/icons";
+import SendIcon from '@material-ui/icons/Send';
+import './Post.css'
+import  ThumbDownIcon  from '@material-ui/icons/ThumbDown';
+
+
 
 function Post() {
   const { postid } = useParams();
@@ -121,8 +126,8 @@ function Post() {
 
       {item ? (
         <>
-          <div className="home">
-            <div className="card home_card profilec">
+          <div className="post">
+            <div className="card home_card postlayout">
               <div className="profile_card_delete">
                 <h3>
                   <Link
@@ -152,7 +157,7 @@ function Post() {
               <p>$ {item.price}</p>
               <h6> {item.unit}</h6>
               <div className="home__card_image">
-                <img src={item.photo} alt="" className="profile__card_image" />
+                <img src={item.photo} alt="" className="post__card_image" />
               </div>
               <h5 className="likecount">{item.like.length} reccomended</h5>
               <div className="home_card_content">
@@ -162,7 +167,7 @@ function Post() {
                       className="home_unlike"
                       onClick={() => unlikePost(item._id)}
                     >
-                      <ShareIcon />
+                    <ThumbDownIcon />
                     </div>
                   ) : (
                     <div
@@ -181,21 +186,27 @@ function Post() {
                     makeComment(e.target[0].value, item._id);
                   }}
                 >
-                  <div className="comment_input_button">
-                    <div className="input">
+               <div className="postcom_sendfelx">
+
+
+                    <div className="inputpost_post">
                       <input
-                        className="inputhome"
+                       
                         type="text"
                         placeholder="add a comment"
                       />
                     </div>
+                       <div className="postcoment_input">
                     <button className="button commentb" type="submit">
-                      Submit
+                     <SendIcon/>
                     </button>
+                 
                   </div>
+               </div>
+
                 </form>
 
-                <div className="comment_box">
+                <div className="comment_box_post">
                   {item.comments.map((comment) => {
                     return (
                       <div className="comment_name">

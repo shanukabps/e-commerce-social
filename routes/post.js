@@ -46,6 +46,7 @@ router.post("/createpost", autherizations, async (req, res) => {
 
 router.get("/mypost", autherizations, async (req, res) => {
   await Post.find({ postedBy: req.user._id })
+    .populate("comments.postedBy","_id name")
     .populate("postedBy", "_id name")
     .then((myposts) => {
       res.json({ myposts });
@@ -229,8 +230,9 @@ router.get("/post/:_id", async (req, res) => {
    
 
   Post.findById(req.params._id)
+    .populate("comments.postedBy","_id name")
  .populate("postedBy","_id name")
-   .populate("comments.postedBy", "_id name")
+ 
  .exec((err,post)=>{
   
 if(err){
